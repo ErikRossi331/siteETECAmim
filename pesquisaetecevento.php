@@ -1,15 +1,9 @@
 <?php
 include_once 'conexao.php';
-$cod_evento = filter_input(INPUT_GET, 'cod_evento', FILTER_SANITIZE_NUMBER_INT);
-$result_evento = "SELECT * FROM eventos where cod_evento = $cod_evento order by data desc";
-		$resultado_evento = mysqli_query($conn, $result_evento);
-
-
-
-while($rows_evento = mysqli_fetch_assoc($resultado_evento)){ 
+	$valor_pesquisar = $_GET['pesquisar'];
 ?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
     <!-- Basic -->
     <meta charset="utf-8">
@@ -19,7 +13,7 @@ while($rows_evento = mysqli_fetch_assoc($resultado_evento)){
     <meta name="viewport" content="width=device-width, initial-scale=1">
  
      <!-- Site Metas -->
-   <title><?php echo $rows_evento['titulo']; ?></title>  
+   <title>Resultados da pesquisa de eventos com: <?php echo $valor_pesquisar ?></title>  
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -100,97 +94,67 @@ while($rows_evento = mysqli_fetch_assoc($resultado_evento)){
 						<li class="nav-item"><a class="nav-link" href="contatoetec.php">Contato</a></li>
 					</ul>
 				</div>
-active			</div>
+			</div>
 		</nav>
 	</header>
 	<!-- End header -->
-
+	
     <div id="overviews" class="section wb">
-        <div class="container">
-            <div class="row"> 
-
-                <div class="col-lg-9 blog-post-single">
-                    <div class="blog-item">
-						<div class="image-blog">
-							<img src="images/eventos/<?php echo $rows_evento['cod_evento']; echo "/"; echo $rows_evento['imagem']; ?>" alt="" class="img-fluid">
-						</div>
-						<div class="post-content">
-		
-							<div class="meta-info-blog">
-								<span><i class="fa fa-calendar"></i> <a href="#"><?php echo date('d/m/Y', strtotime($rows_evento['data'])); ?></a> </span>
-								<span><i class="fa fa-tag"></i>  <a href="#">Evento</a> </span>
-							</div>
-							<div class="blog-title">
-								
-							</div>
-							<br>
-							<div class="blog-desc">
-								<p><?php echo $rows_evento['descricao']; ?></p>
-								
-							</div>							
-						</div>
-					</div>
-					<?php } ?>
-				
-					
-					<div class="blog-comments">
-						
-					</div>
-					
-					
-                </div><!-- end col -->
-
-				<div class="col-lg-3 col-12 right-single">
-					<div class="widget-search">
-						<div class="site-search-area">
-							<form method="get" id="site-searchform" action="pesquisaetecevento.php">
-								<div>
-									<input class="input-text form-control" name="pesquisar" id="search-k" placeholder="Pesquise..." type="text">
-									<button id="searchsubmit" value="Search" type="submit">
-								</div>
-							</form>
-						</div>
-					</div>
-					
-				
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end section -->
-
-<div id="overviews" class="section wb">
         <div class="container">
             <div class="section-title row text-center">
                 <div class="col-md-4">
 
                     <h3>Últimos Eventos</h3>
+
                     <div class="before"></div>
 
                 </div>
                    <hr>
             <hr class="invis"> 
-
+<div class="col-lg-3 col-12 right-single">
+					<div class="widget-search">
+						<div class="site-search-area">
+							<form method="get" id="site-searchform" action="pesquisaetecevento.php">
+								<div>
+									<input class="input-text form-control" name="pesquisar" id="search-k" placeholder="Pesquise..." type="text">
+									<button id="searchsubmit" value="Enviar" type="submit">
+								</div>
+							</form>
+						</div>
+					</div>
+    </div>
 
             <div class="row">
             	
-<div class="row" id="evento"> 
+<div class="row" id="noticia"> 
+
 	<?php
-		$result_evento2 = "SELECT * FROM eventos where cod_evento <> $cod_evento order by data desc limit 6";
-		$resultado_evento2 = mysqli_query($conn, $result_evento2);
- while($rows_evento = mysqli_fetch_assoc($resultado_evento2)){ ?>
-                <div class="col-lg-4 col-md-6 col-12">
+	$pagina_atual = filter_input(INPUT_GET,'pagina', FILTER_SANITIZE_NUMBER_INT);		
+		$pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
+		
+		//Setar a quantidade de itens por pagina
+		$qnt_result_pg = 12;
+		
+		//calcular o inicio visualização
+		$inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
+	$result_noticia = "SELECT * FROM eventos WHERE titulo LIKE '%$valor_pesquisar%' order by data desc LIMIT $inicio, $qnt_result_pg";
+		$resultado_noticia = mysqli_query($conn, $result_noticia);
+		while($rows_noticia = mysqli_fetch_array($resultado_noticia)){ ?>
+                <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="blog-item2">
 						<div class="image-blog">
-								<a href="etecevento.php?cod_evento=<?php echo $rows_evento['cod_evento']; ?>"><img class="img-fluid imgpers2 img-responsive" src="images/eventos/<?php echo $rows_evento['cod_evento']; echo "/"; echo $rows_evento['imagem']; ?>" alt="#" /> </a>
+								<a href="etecevento.php?cod_evento=<?php echo $rows_noticia['cod_evento']; ?>"><img class="img-fluid imgpers2 img-responsive" src="images/eventos/<?php echo $rows_noticia['cod_evento']; echo "/"; echo $rows_noticia['imagem']; ?>" alt="#" /> </a>
 						</div>
 						<div class="meta-info-blog">
-							<span><i class="fa fa-calendar"></i> <a href="#evento"><?php echo date('d/m/Y', strtotime($rows_evento['data'])); ?></a> </span>
-                            <span><i class="fa fa-tag"></i>  <a href="#evento">Evento</a> </span>
+							<span><i class="fa fa-calendar"></i> <a href="#noticia"><?php echo date('d/m/Y', strtotime($rows_noticia['data'])); ?></a> </span>
+                            <span><i class="fa fa-tag"></i>  <a href="#noticia">Evento</a> </span>
 						</div>
 						<div class="blog-title">
-							<h2><a href="etecevento.php?cod_evento=<?php echo $rows_evento['cod_evento']; ?>"><?php echo $rows_evento['titulo']; ?></a></h2>
+							<h2><a href="etecevento.php?cod_evento=<?php echo $rows_noticia['cod_evento']; ?>"><?php echo $rows_noticia['titulo']; ?></a></h2>
 						</div>
+
 						<div class="blog-desc">
-							<p><?php echo (strlen($rows_evento['descricao']) > 88 ? substr($rows_evento['descricao'], 0, 88)."..." : $rows_evento['descricao']) . "</h3>";?></p>
+							<p><?php echo (strlen($rows_noticia['descricao']) > 88 ? substr($rows_noticia['descricao'], 0, 88)."..." : $rows_noticia['descricao']) . "</h3>";?></p>
 						</div>
 						<div class="blog-button">
 							
@@ -200,15 +164,49 @@ active			</div>
                 </div><!-- end col -->
 
 			 <?php  } ?>
+			 
 </div>
-<div class="message-box2 center">
-               <a href="eventos.php" class="hover-btn-new orange"><span>Ler mais</span></a>
-           </div>
+               
 </div>
-</div>
+<br><br>
+<?php
+
+		//Paginção - Somar a quantidade de usuários
+		$result_pg = "SELECT COUNT(cod_evento) AS num_result FROM eventos where titulo LIKE '%$valor_pesquisar%' order by data desc";
+		$resultado_pg = mysqli_query($conn, $result_pg);
+		$row_pg = mysqli_fetch_assoc($resultado_pg);
+		//echo $row_pg['num_result'];
+		//Quantidade de pagina 
+		$quantidade_pg = ceil($row_pg['num_result'] / $qnt_result_pg);
+		
+		//Limitar os link antes depois
+		$max_links = 2;
+		echo "
+<nav aria-label='Page navigation example'>
+  <ul class='pagination center'>";
+		
+		for($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++){
+			if($pag_ant >= 1){ ?>
+				<li class='page-item'><a class='page-link' href='pesquisaetecevento.php?pagina=<?php echo $pag_ant; ?>&pesquisar=<?php echo $valor_pesquisar; ?>'><?php echo $pag_ant ?></a></li>
+				<?php
+			}
+		}
+			
+		echo "<li class='page-item'><a class='page-link'>$pagina</a></li>";
+		
+		for($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++){
+			if($pag_dep <= $quantidade_pg){ ?>
+			<li class='page-item'><a class='page-link' href='pesquisaetecevento.php?pagina=<?php echo $pag_dep; ?>&pesquisar=<?php echo $valor_pesquisar; ?>'><?php echo $pag_dep ?></a></li>
+
+			<?php } 
+		}
+		
+		
+		?>		
+
+    </div>
 </div>
 
-           
  <footer class="footer">
         <div class="container">
             <div class="row">

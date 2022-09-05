@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 22-Ago-2022 às 14:01
+-- Generation Time: 31-Ago-2022 às 12:39
 -- Versão do servidor: 5.7.24
 -- versão do PHP: 7.2.14
 
@@ -21,6 +21,35 @@ SET time_zone = "+00:00";
 --
 -- Database: `dbetec`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `calendario`
+--
+
+DROP TABLE IF EXISTS `calendario`;
+CREATE TABLE IF NOT EXISTS `calendario` (
+  `cod_cad` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `data` date NOT NULL,
+  `arquivo` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`cod_cad`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `calendario`
+--
+
+INSERT INTO `calendario` (`cod_cad`, `titulo`, `data`, `arquivo`) VALUES
+(1, 'Calendário Escolar - Técnico em Enfermagem - 1º módulo', '2022-08-05', 'calendenferm1.pdf'),
+(2, 'Calendário Escolar - Técnico em Enfermagem - 2º módulo Turma A, B e C', '2022-07-12', 'calendarioenfer2.pdf\r\n'),
+(3, 'Calendário Escolar - Técnico em Enfermagem - 2º módulo - Turma D', '2022-07-12', 'calendenferm2d.pdf'),
+(4, 'Calendário Escolar - Técnico em Enfermagem - 4º módulo', '2022-07-12', 'calendenferm4.pdf'),
+(5, 'Calendário Escolar - Novotec Intercomplementar (EE Osvaldo Martins)', '2022-01-26', 'calendnovoimpl.pdf'),
+(6, 'Calendário Escolar - Técnico em Meio Ambiente', '2022-01-25', 'calendmeioambiente.pdf'),
+(7, 'Calendário Escolar - Técnico em Recursos Humanos - Classe Descentralizada Parapuã', '2022-01-25', 'calendrhparapua.pdf'),
+(8, 'Calendário Escolar 2022 - Geral', '2022-01-21', 'calendgeral.pdf');
 
 -- --------------------------------------------------------
 
@@ -75,6 +104,99 @@ INSERT INTO `cursos` (`cod_curso`, `nome`, `tipo`, `duracao`, `coordenador`, `me
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `downloads`
+--
+
+DROP TABLE IF EXISTS `downloads`;
+CREATE TABLE IF NOT EXISTS `downloads` (
+  `cod_down` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `data` date NOT NULL,
+  `arquivo` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`cod_down`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `downloads`
+--
+
+INSERT INTO `downloads` (`cod_down`, `titulo`, `data`, `arquivo`) VALUES
+(1, 'Convocação para Prova Métodos Pedagógicos Processo Seletivo de Docentes Av. nº 027/04/2022', '2022-05-10', 'provapedago.pdf');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `equipe`
+--
+
+DROP TABLE IF EXISTS `equipe`;
+CREATE TABLE IF NOT EXISTS `equipe` (
+  `cod_equi` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(120) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cargo` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descricao` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `curso2` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `curso3` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`cod_equi`)
+) ENGINE=MyISAM AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `equipe`
+--
+
+INSERT INTO `equipe` (`cod_equi`, `nome`, `cargo`, `descricao`, `curso2`, `curso3`) VALUES
+(1, 'Paulo Sérgio Finotti', 'Diretoretec\r\n', 'Diretor da Escola Técnica Estadual Amim Jundi', '', ''),
+(2, 'Lucimara Alves de Aguiar Basso', 'Coordenação Pedagógica', 'Coordenador de Orientação e Apoio Educacional', '', ''),
+(3, 'Eduardo de Souza Pontes', 'Coordenação Pedagógica', 'Coordenador Pedagógico', '', ''),
+(4, 'Aline Jacob Orlando Santana', 'equipe administrativa', 'Agente Técnico e Administrativo', '', ''),
+(5, 'Ana Paula Pereira da Silva', 'equipe administrativa', 'Agente Técnico e Administrativo', '', ''),
+(6, 'André Fernandes Barboza', 'equipe administrativa', 'Agente Técnico e Administrativo', '', ''),
+(7, 'Cesar Augusto Pinheiro Vitor', 'equipe administrativa', 'Auxiliar de Docente', '', ''),
+(8, 'Décio Bernardineli', 'equipe administrativa', 'Auxiliar de Apoio', '', ''),
+(9, 'Ester das Neves', 'equipe administrativa', 'Agente Técnico e Administrativo', '', ''),
+(10, 'Fábio José Pigossi', 'equipe administrativa', 'Assessor Técnico Administrativo II', '', ''),
+(11, 'Gisele Rosa Lourenco dos Santos', 'equipe administrativa', 'Asesssor Administrativo', '', ''),
+(12, 'Gustavo Sanches da Silva', 'equipe administrativa', 'Assessor Administrativo', '', ''),
+(13, 'Henderson Claiton Bariani', 'equipe administrativa', 'Agente Técnico e Administrativo', '', ''),
+(14, 'Jaime Ribeiro da Silva', 'equipe administrativa', 'Agente Técnico e Administrativo', '', ''),
+(15, 'João Navarro Arias', 'equipe administrativa', 'Auxiliar de Apoio', '', ''),
+(16, 'Leandro Radighieri', 'equipe administrativa', 'Agente Técnico e Administrativo', '', ''),
+(17, 'Ricardo Takashi Kawata', 'equipe administrativa', 'Analista de Suporte e Gestão - Bibliotecário', '', ''),
+(18, 'Rodrigo da Silva Stecca', 'equipe administrativa', 'Diretor de Serviço - Administrativo', '', ''),
+(19, 'Sérgio Roberto Octaviano', 'equipe administrativa', 'Diretor de Seviço - Acadêmico', '', ''),
+(20, 'Sueli Aparecida de Souza Ponce', 'equipe administrativa', 'Agente Técnico e Administrativo', '', ''),
+(21, 'Vânia Miranda Coroquer', 'equipe administrativa', 'Agente Técnico e Administrativo', '', ''),
+(22, 'Adriana Ferreira Babosa', 'coordenador', 'Técnico em Açúcar e Álcool', '', ''),
+(23, 'Andréa Márcia Pinto Finote', 'coordenador', 'Técnico em Enfermagem', 'Técnico em Segurança do Trabalho\r\n', ''),
+(24, 'Daiane Marcela Piccolo', 'coordenador', 'Técnico em Desenvolvimento de Sistemas', 'Técnico em Informática para Internet', ''),
+(25, 'Eder Aparecido de Sousa', 'coordenador', 'Técnico em Administração', 'Técnico em Contabilidade', 'Técnico em Logística'),
+(26, 'Elaine Uranga Clivelaro Buturi', 'coordenador', 'Ensino Médio Integrado ao Técnico em Administração', 'Novotec em Administração', ''),
+(27, 'Éverton Henrique Gonçales Cardoso', 'coordenador', 'Técnico em Meio Ambiente', '', ''),
+(28, 'Fernanda Moreira Ferreira', 'coordenador', 'Técnico em Marketing', 'Novotec em Recursos Humanos', 'Novotec em Administação Híbrido (E.E. Osvaldo Martins)'),
+(29, 'Marcelo Aparecido Decurcio', 'coordenador', 'Ensino Médio', 'Ensino Médio com Itinerário Formativo em Linguagens', ''),
+(30, 'Renê Guerreiro de Souza Cintra', 'coordenador', 'Técnico em Farmácia', 'Técnico em Química', 'Novotec em Química'),
+(31, 'Ricardo Fassina Maioli', 'coordenador', 'Técnico em Redes de Computadores', '', ''),
+(32, 'Rodrigo Fernandes', 'coordenador', 'Técnico em Recursos Humanos', 'Técnico em Recursos Humanos (Parapuã)', ''),
+(33, 'Simone Confortini Correia', 'coordenador', 'Técnico em Informática', 'Novotec em Desenvolvimento de Sistemas', ''),
+(34, 'Juracy de Souza Lino', 'bolsa do povo', '', '', ''),
+(35, 'Cintia Pereira Lima', 'limpeza', 'Auxiliar de Limpeza', '', ''),
+(36, 'Luciani Miranda Tomaz', 'limpeza', 'Auxiliar de Limpeza', '', ''),
+(37, 'Paulo Roberto Gonçalves da Vitória', 'limpeza', 'Auxiliar de Limpeza', '', ''),
+(38, 'Roseli dos Santos Mariguela Pontes', 'limpeza', 'Auxiliar de Limpeza', '', ''),
+(39, 'Vanderli Miranda Barbosa', 'limpeza', 'Auxiliar de Limpeza', '', ''),
+(40, 'Adriano José Pierini', 'seguranca', 'Vigilante', '', ''),
+(41, 'Alex Elias de Carvalho', 'seguranca', 'Vigilante', '', ''),
+(42, 'Antonio Carlos Bueno Soares', 'seguranca', 'Vigilante', '', ''),
+(43, 'Élcio Senna', 'seguranca', 'Vigilante', '', ''),
+(44, 'Márcio José dos Santos', 'seguranca', 'Vigilante', '', ''),
+(45, 'Stanley Emiliano Rocha', 'seguranca', 'Vigilante', '', ''),
+(46, 'Vagner Antônio Muniz', 'seguranca', 'Vigilante', '', ''),
+(47, 'Sérgio Roberto Octaviano', 'apm-diretorexe', '', '', ''),
+(48, 'Rosiane Wolf Luz', 'apm-diretorfina', '', '', '');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `eventos`
 --
 
@@ -102,6 +224,31 @@ INSERT INTO `eventos` (`cod_evento`, `titulo`, `descricao`, `imagem`, `data`, `i
 (6, 'O Julgamento de Capitu', 'A Etec Amim Jundi procura sempre inovar e trazer novas metodologias onde o aluno se torna protagonista e desenvolve com prazer as atividades que lhe são sugeridas.\r\n\r\nNo último dia 31 de março, o 2º ano do Ensino Médio com Itinerário Formativo, no componente curricular Laboratório de Processos Criativos, realizou um espetacular debate, com o tema: O julgamento de Capitu. Inicialmente os alunos foram motivados a ler a obra “Dom Casmurro”, de Machado de Assis. Após a leitura foram motivados a preparar um debate onde ocorreria o julgamento da personagem Capitu.\r\n\r\nA atividade iniciou-se com a apresentação da obra, em seguida alguns personagens desfilaram no palco trazendo suas características e peculiaridades marcantes da citada obra.\r\n\r\nO julgamento foi empolgante, envolvendo inúmeros argumentos e contra argumentos, em uma demonstração de preparo e dedicação. Houve também uma equipe de marketing que preparou divulgação digital do evento, cartazes, folders, lembrancinhas do evento.\r\n\r\nHá de se destacar ainda que houve um corpo de jurados com 11 (onze) membros, sendo ex-alunos e pai de aluno, buscando uma isenção total na hora de responder aos quesitos, que também foram preparados pelos alunos.\r\n\r\nO resultado do julgamento é a eterna pergunta trazida na imortal obra machadiana: Será que Capitu traiu Bentinho?\r\n\r\nO julgamento foi tão comentado e com resultado tão positivo que ocorrerá novamente, em outros termos, no dia 05/04/2022, agora com outras turmas para assistir e nova forma de julgar.\r\n\r\nÉ sempre muito bom ver os alunos tornarem-se protagonistas e exporem com firmeza e veemência seus argumentos e opiniões. Parabéns a todos os alunos do 2º ano do Ensino Médio com Itinerário Formativo, pois demonstram que esse é um curso de peso e importante dentro da Etec Amim Jundi.', 'capitu.jfif', '2022-04-05', 'capitu.jfif'),
 (7, 'Bate-papo com ex-alunos', 'Na manhã do dia 29, realizamos um bate-papo com ex-alunos do ETIM (Ensino Técnico em Administração integrado ao Ensino Médio) de vários anos anteriores com os atuais discentes da área de Administração integrada ao Ensino Médio (Novotec de Administração e ETIM). Bruna Caroline Silva (2014 - 2016), Dafine Cristina do Carmo Ferreira (2016 - 2018), Daniel Logino de Souza Junior (2015 - 2017), João Vitor dos Santos Lopes (2015 - 2017), Maria Emilia dos Santos Lopes (2016 - 2018), Maria Fernanda de Oliveira Nunes (2016-2018) e Vitor Hugo Novais Carniato (2012 - 2014) contaram suas experiências vividas no tempo em que estudaram na Etec, como foi quando saíram da escola e como estão hoje, em relação aos estudos e vida profissional. De forma descontraída, cheia de carinho e respeito por nossa instituição, os atuais alunos puderam presenciar depoimentos repletos de aprendizado e puderam fazer perguntas sobre os desafios vividos por aqueles que já passaram por aqui. A Etec Amim Jundi agradece, se alegra e está sempre de portas abertas para receber os ex-alunos que fizeram parte de nossa história.', 'batepapo.jfif', '2022-03-31', 'batepapo.jfif'),
 (8, 'Trote 2022', 'Na Etec Amim Jundi há um costume, que perdura há anos e que praticamente virou tradição, onde os alunos dos terceiros (3º) anos, espontaneamente, organizam-se e periodicamente criam alguns “trotes”, no sentido alegre, respeitoso e dinâmico da palavra, buscando marcar o último ano vivido naquela etapa de suas vidas.\r\n\r\nNeste ano, no dia 15 de março, os alunos resolveram vir fantasiados rememorando e celebrando um período bastante festivo e próprio de nossa cultura: o carnaval, levando como doação macarrão, inclusive eles se organizaram e também solicitaram para as demais salas, sendo arrecadado 241 pacotes de macarrão, além de mais de R$ 550,00 para a aquisição do produto.\r\n\r\nA participação foi efetiva e muito divertida, sendo uma singela e verdadeira festa onde a ordem e a alegria preponderaram, tendo, inclusive, a participação de professores, os quais não mediram esforços para que aquele momento ficasse eternizado, afinal são instantes como aqueles que ficam gravados não apenas nas lentes fotográficas, mas na retina e na mente de cada um.\r\n\r\nO mais importante, como já exposto, foi a solidariedade do ato espontâneo de cada aluno, demonstrando que não pensam apenas em si, mas também em todos na sociedade, sendo que o produto será doado para entidades de nosso município. Vale ressaltar que alguns professores também vieram fantasiados, contribuindo para o sucesso do evento.\r\n\r\nCom certeza, estudar na Etec é viver, é marcar uma época de sua vida, preparando-se para o prosseguimento nos estudos e levando sempre no coração o amor e dignidade como pessoa humana.', 'trote2022.jfif', '2022-03-16', 'trote2022.jfif');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `legislacao`
+--
+
+DROP TABLE IF EXISTS `legislacao`;
+CREATE TABLE IF NOT EXISTS `legislacao` (
+  `cod_leg` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `data` date NOT NULL,
+  `arquivo` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`cod_leg`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `legislacao`
+--
+
+INSERT INTO `legislacao` (`cod_leg`, `titulo`, `data`, `arquivo`) VALUES
+(1, 'Manual do Banco de Talentos', '2022-08-18', 'manualbanco.pdf'),
+(2, 'Regimento Comum das Escolas Técnicas Estaduais', '2022-07-28', 'regimento.pdf'),
+(3, 'Manual de integração do aluno 2022', '2022-01-28', 'manualintegra.pdf'),
+(4, 'Regulamento Geral do Trabalho de Conclusão de Curso', '2015-02-27', 'regulamentotcc.pdf');
 
 -- --------------------------------------------------------
 
@@ -644,82 +791,84 @@ CREATE TABLE IF NOT EXISTS `professores` (
   `titulacao` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
   `curso` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `area` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`cod_prof`)
-) ENGINE=MyISAM AUTO_INCREMENT=70 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=71 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `professores`
 --
 
-INSERT INTO `professores` (`cod_prof`, `nome`, `titulacao`, `curso`, `area`) VALUES
-(1, 'Cesar Augusto Pinheiro Vitor', 'Especialista', '15 10 29 28', ''),
-(2, 'Rosiane Wolf Luz', 'Mestre', '28 15 26 10', ''),
-(3, 'Daiane Marcela Piccolo', 'Mestre', '28 15 26', ''),
-(4, 'André Eduardo de Souza', 'Especialista', '', ''),
-(5, 'Antonio Carlos Baratella', 'Especialista', '', ''),
-(6, 'Diego César Rodrigues', 'Especialista', '', ''),
-(7, 'Eduardo de Souza Pontes', 'Especialista', '', ''),
-(8, 'Elaine Uranga Clivelaro Buturi', 'Especialista', '', ''),
-(9, 'Gilson da Silva', 'Especialista', '', ''),
-(10, 'José Aurélio Pieretti', 'Especialista', '', ''),
-(11, 'Osmar Campanari', 'Especialista', '', ''),
-(12, 'Paulo Sérgio Finoti', 'Especialista', '', ''),
-(13, 'Rafael Baldim Marquez', 'Especialista', '', ''),
-(14, 'Renê Guerreiro da Souza Cintra', 'Especialista', '', ''),
-(15, 'Ricardo Fassina Maioli', 'Especialista', '', ''),
-(16, 'Santo de Jesus Pelloso', 'Especialista', '', ''),
-(17, 'Sérgio Roberto Octaviano', 'Especialista', '', ''),
-(18, 'Vicente Hideo Oyama', 'Especialista', '', ''),
-(19, 'Bruno Zaneli Campanari', 'Licenciado', '', ''),
-(20, 'Mário André Gimenes Otoboni', 'Licenciado', '', ''),
-(21, 'Éder Aparecido de Sousa', 'Mestre', '', ''),
-(22, 'Éverton Henrique Gonçales Cardoso', 'Mestre', '', ''),
-(23, 'José Cláudio Pecini', 'Mestre', '', ''),
-(24, 'Leonardo Oliveira Buturi', 'Mestre', '', ''),
-(25, 'Marcelo Aparecido Decurcio', 'Mestre', '', ''),
-(26, 'Marinaldo Zago', 'Mestre', '', ''),
-(27, 'Rodrigo da Silva Stecca', 'Mestre', '', ''),
-(28, 'Rodrigo Fernandes', 'Mestre', '', ''),
-(29, 'Thiago Talon de Oliveira Carreira', 'Mestre', '', ''),
-(30, 'Mariani Armagni Ciciliati', 'Doutor', '', ''),
-(31, 'Adriana Ferreira Barbosa', 'Especialista', '', ''),
-(32, 'Adriana Regina Pinto Tomaz', 'Especialista', '', ''),
-(33, 'Andréa Márcia Pinto Finote', 'Especialista', '', ''),
-(34, 'Andréia Maria Silva Duarte', 'Especialista', '', ''),
-(35, 'Caroline Martins Sampaio', 'Especialista', '', ''),
-(36, 'Célia Aparecida de Lima Pereira', 'Especialista', '', ''),
-(37, 'Cristiane Vanda dos Santos Marchan', 'Especialista', '', ''),
-(38, 'Edelma Alencar Lima Jacob', 'Especialista', '', ''),
-(39, 'Fernanda Moreira Ferreira', 'Especialista', '', ''),
-(40, 'Liliane Oliveira Sakano', 'Especialista', '', ''),
-(41, 'Lucimara Alves de Aguiar Basso', 'Especialista', '', ''),
-(42, 'Mara Regina Arenhardt Tomaz', 'Especialista', '', ''),
-(43, 'Marielli Galheira Uranga Peixoto', 'Especialista', '', ''),
-(44, 'Marisa Castilho Mendes Penga', 'Especialista', '', ''),
-(45, 'Marla Penasso Brozulato Monarin', 'Especialista', '', ''),
-(46, 'Miriam de Oliveira Nascimento', 'Especialista', '', ''),
-(47, 'Raquel Pereira de Souza', 'Especialista', '', ''),
-(48, 'Regina Maria Bertolo Zupirolli', 'Especialista', '', ''),
-(49, 'Renata Ribeiro Pereira Vitor', 'Especialista', '', ''),
-(50, 'Rosângela de Siqueira Magdalena', 'Especialista', '', ''),
-(51, 'Rosângela de Siqueira Magdalena', 'Especialista', '', ''),
-(52, 'Tatiana Galassi', 'Especialista', '', ''),
-(53, 'Viviane Pelloso Voznhaki', 'Especialista', '', ''),
-(54, 'Zilda Lopes Mio', 'Especialista', '', ''),
-(55, 'Jaine Daniele Rodrigues de Souza Ribeiro', 'Especialista', '', ''),
-(56, 'Leila Ribeiro Bizuti', 'Licenciado', '', ''),
-(57, 'Mariana Pimenta Bernardes', 'Licenciado', '', ''),
-(58, 'Paula Rived Garcia', 'Licenciado', '', ''),
-(59, 'Aline Bezerra da Silva', 'Mestre', '', ''),
-(60, 'Camila de Souza Prazeres', 'Mestre', '', ''),
-(61, 'Fernanda Cathusca Morelli Silva', 'Mestre', '', ''),
-(62, 'Fernanda Siquini Valenciano', 'Mestre', '', ''),
-(63, 'Franciele Facco de Carvalho', 'Mestre', '', ''),
-(64, 'Letícia Maria Galdino de Oliveira', 'Mestre', '', ''),
-(65, 'Luciana Akemi Kimura', 'Mestre', '', ''),
-(66, 'Rebeca Zuliani Galvão', 'Mestre', '', ''),
-(67, 'Renata Luciana Coneglian Facco', 'Mestre', '', ''),
-(68, 'Rosângela de Carvalho Sufi', 'Mestre', '', '');
+INSERT INTO `professores` (`cod_prof`, `nome`, `titulacao`, `curso`, `area`, `email`) VALUES
+(1, 'Cesar Augusto Pinheiro Vitor', 'Especialista', '15 10 29 28', 'Tecnologia da Informação', 'cesar.vitor01@etec.sp.gov.br'),
+(2, 'Rosiane Wolf Luz', 'Mestre', '28 15 26 10', 'Tecnologia da Informação', 'rosiwluz@gmail.com'),
+(3, 'Daiane Marcela Piccolo', 'Mestre', '28 15 26', 'Tecnologia da Informação', ''),
+(4, 'André Eduardo de Souza', 'Especialista', '', 'Gestão e Negócios', 'andre.souza@etec.sp.gov.br'),
+(5, 'Antonio Carlos Baratella', 'Especialista', '', 'Gestão e Negócios', 'prof.baratella@gmail.com'),
+(6, 'Diego César Rodrigues', 'Especialista', '', 'Direito', ''),
+(7, 'Eduardo de Souza Pontes', 'Especialista', '', 'Letras: Português e Inglês', 'eduardo.pontes10@etec.sp.gov.br'),
+(8, 'Elaine Uranga Clivelaro Buturi', 'Especialista', '', 'Letras: Português e Inglês', ''),
+(9, 'Gilson da Silva', 'Especialista', '', 'Gestão e Negócios', 'profgsilva@gmail.com'),
+(10, 'José Aurélio Pieretti', 'Especialista', '', '', ''),
+(11, 'Osmar Campanari', 'Especialista', '', 'Gestão e Negócios', ''),
+(12, 'Paulo Sérgio Finoti', 'Especialista', '', 'Gestão e Negócios', ''),
+(13, 'Rafael Baldim Marquez', 'Especialista', '', 'Farmácia', 'rafael.marquez@etec.sp.gov.br'),
+(14, 'Renê Guerreiro da Souza Cintra', 'Especialista', '', 'Farmácia', ''),
+(15, 'Ricardo Fassina Maioli', 'Especialista', '', 'Tecnologia da Informação', 'ricardo.maioli2@etec.sp.gov.br'),
+(16, 'Santo de Jesus Pelloso', 'Especialista', '', 'Química', 'santo.pelloso@etec.sp.gov.br'),
+(17, 'Sérgio Roberto Octaviano', 'Especialista', '', 'Gestão e Negócios', ''),
+(18, 'Vicente Hideo Oyama', 'Especialista', '', '', ''),
+(19, 'Bruno Zaneli Campanari', 'Licenciado', '', 'Física/Química', 'zaneli93@gmail.com'),
+(20, 'Mário André Gimenes Otoboni', 'Licenciado', '', '', 'mario.otoboni@etec.sp.gov.br'),
+(21, 'Éder Aparecido de Sousa', 'Mestre', '', 'Gestão e Negócios', 'eder.sousa@etec.sp.gov.br'),
+(22, 'Éverton Henrique Gonçales Cardoso', 'Mestre', '', 'Geografia', 'evertonhgcardoso@gmail.com'),
+(23, 'José Cláudio Pecini', 'Mestre', '', 'História/Sociologia e Filosofia', 'histjc@yahoo.com.br'),
+(24, 'Leonardo Oliveira Buturi', 'Mestre', '', 'Matemática/Física', 'leobuturi@gmail.com'),
+(25, 'Marcelo Aparecido Decurcio', 'Mestre', '', 'Letras: Português e Inglês', ''),
+(26, 'Marinaldo Zago', 'Mestre', '', 'Matemática', ''),
+(27, 'Rodrigo da Silva Stecca', 'Mestre', '', 'Gestão e Negócios', 'rodrigostecca@etec.sp.gov.br'),
+(28, 'Rodrigo Fernandes', 'Mestre', '', 'Gestão e Negócios', 'rodrigo.fernandes1@etec.sp.gov.br'),
+(29, 'Thiago Talon de Oliveira Carreira', 'Mestre', '', 'Gestão e Negócios', ''),
+(30, 'Mariani Armagni Ciciliati', 'Doutor', '', 'Química', ''),
+(31, 'Adriana Ferreira Barbosa', 'Especialista', '', 'Química', ''),
+(32, 'Adriana Regina Pinto Tomaz', 'Especialista', '', 'Tecnologia da Informação', 'adrianatmz@gmail.com'),
+(33, 'Andréa Márcia Pinto Finote', 'Especialista', '', 'Enfermagem', ''),
+(34, 'Andréia Maria Silva Duarte', 'Especialista', '', '', ''),
+(35, 'Caroline Martins Sampaio', 'Especialista', '', 'Tecnologia da Informação', ''),
+(36, 'Célia Aparecida de Lima Pereira', 'Especialista', '', 'Ciências Humanas, Sociais e Artes', ''),
+(37, 'Cristiane Vanda dos Santos Marchan', 'Especialista', '', 'Tecnologia da Informação', 'cristiane.vanda@etec.sp.gov.br'),
+(38, 'Edelma Alencar Lima Jacob', 'Especialista', '', 'Química', 'edelma.prof@gmail.com'),
+(39, 'Fernanda Moreira Ferreira', 'Especialista', '', 'Gestão e Negócios', ''),
+(40, 'Liliane Oliveira Sakano', 'Especialista', '', 'Enfermagem', ''),
+(41, 'Lucimara Alves de Aguiar Basso', 'Especialista', '', 'Letras: Português e Inglês', 'lucimara.basso@etec.sp.gov.br'),
+(42, 'Mara Regina Arenhardt Tomaz', 'Especialista', '', 'Segurança do Trabalho', 'mareartomaz@gmail.com'),
+(43, 'Marielli Galheira Uranga Peixoto', 'Especialista', '', 'Letras: Português e Inglês', ''),
+(44, 'Marisa Castilho Mendes Penga', 'Especialista', '', 'Letras: Português e Inglês', 'mcastilho.penga@gmail.com'),
+(45, 'Marla Penasso Brozulato Monarin', 'Especialista', '', 'Farmácia', ''),
+(46, 'Miriam de Oliveira Nascimento', 'Especialista', '', '', ''),
+(47, 'Raquel Pereira de Souza', 'Especialista', '', '', ''),
+(48, 'Regina Maria Bertolo Zupirolli', 'Especialista', '', 'Enfermagem', ''),
+(49, 'Renata Ribeiro Pereira Vitor', 'Especialista', '', 'Enfermagem', ''),
+(50, 'Rosângela de Siqueira Magdalena', 'Especialista', '', '', ''),
+(51, 'Rosângela de Siqueira Magdalena', 'Especialista', '', '', ''),
+(52, 'Tatiana Galassi', 'Especialista', '', 'Farmácia', ''),
+(53, 'Viviane Pelloso Voznhaki', 'Especialista', '', '', ''),
+(54, 'Zilda Lopes Mio', 'Especialista', '', 'Enfermagem', ''),
+(55, 'Jaine Daniele Rodrigues de Souza Ribeiro', 'Especialista', '', 'Gestão e Negócios', ''),
+(56, 'Leila Ribeiro Bizuti', 'Licenciado', '', 'Letras: Português e Inglês', ''),
+(57, 'Mariana Pimenta Bernardes', 'Licenciado', '', 'Geografia', ''),
+(58, 'Paula Rived Garcia', 'Licenciado', '', 'Educação Física', 'paula.rived@gmail.com'),
+(59, 'Aline Bezerra da Silva', 'Mestre', '', 'Gestão e Negócios', ''),
+(60, 'Camila de Souza Prazeres', 'Mestre', '', 'Enfermagem', ''),
+(61, 'Fernanda Cathusca Morelli Silva', 'Mestre', '', 'Química', 'fermorelli.silva@gmail.com'),
+(62, 'Fernanda Siquini Valenciano', 'Mestre', '', 'Letras: Português e Inglês', ''),
+(63, 'Franciele Facco de Carvalho', 'Mestre', '', 'Enfermagem', 'franfacco@yahoo.com.br'),
+(64, 'Letícia Maria Galdino de Oliveira', 'Mestre', '', 'Tecnologia da Informação', 'leticia.oliveira@etec.sp.gov.br'),
+(65, 'Luciana Akemi Kimura', 'Mestre', '', 'Biologia', ''),
+(66, 'Rebeca Zuliani Galvão', 'Mestre', '', 'Química', ''),
+(67, 'Renata Luciana Coneglian Facco', 'Mestre', '', 'Enfermagem', ''),
+(68, 'Rosângela de Carvalho Sufi', 'Mestre', '', 'Direito', ''),
+(70, 'Simone Confortini Correia', 'Especialista', '', 'Tecnologia da Informação', 'simone.confortini@etec.sp.gov.br');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

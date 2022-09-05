@@ -47,6 +47,9 @@ body {
     right: 0;
 
 }
+}
+
+
 .center {
 
 margin: auto;
@@ -72,6 +75,63 @@ a.page-link {
     background-color: darkred;
     color: white;
 }
+
+.page-link {
+
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1200px) {
+
+.page-link {
+
+left: 29rem;
+
+}
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+.page-link {
+
+left: 24rem;
+
+}
+
+}
+
+@media only screen and (max-width: 992px) {
+
+.page-link {
+
+left: 17rem;
+
+}
+}
+
+@media only screen and (max-width: 768px) {
+
+.page-link {
+
+left: 10rem;
+
+}
+}
+
+@media only screen and (max-width: 530px) {
+
+.page-link {
+
+left: 8rem;
+
+}
+}
+
+
 
 body.demos .section {
     background: url(images/bg.png) repeat top center #f2f3f5;
@@ -209,6 +269,8 @@ a,
     padding: 0;
 }
 
+
+
 p.lea {
     font-size: 18px;
     line-height: 30px;
@@ -220,6 +282,25 @@ p.lea {
 blockquote {
     margin: 20px 0 20px;
     padding: 30px;
+}
+
+.card12 {
+
+    border: 1px solid lightgrey;
+    padding: 20px !important;
+
+}
+
+.ss2 {
+
+    font-size: 24px !important;
+    line-height: 10px;
+}
+
+h6.sas {
+
+    font-size: 30px;
+
 }
 
 
@@ -1501,7 +1582,6 @@ color: white;
 
     }
 
-
 }
 
 
@@ -1514,6 +1594,25 @@ border-top-color: transparent;
     background-color: transparent;
     overflow: hidden;
 }
+
+h0.cola {
+
+line-height: 0.1px !important;
+
+
+}
+
+
+.card2 {
+border-collapse: collapse;
+border-bottom-color: transparent;
+border-left-color: transparent;
+border-right-color: transparent;
+border-top-color: transparent;
+    background-color: transparent;
+    overflow: hidden;
+}
+
 
 .card-header {
     background-color: transparent;
@@ -1699,14 +1798,19 @@ border-color: darkred;
 }
 
 
-@media screen and (max-width: 1200px) {
 
 
+@media screen and (max-width: 1000px) {
+
+    .ss2 {
+
+        font-size: 12px !important;
+        font-weight: 500;
+    word-break: break-all !important;
+    }
 
 
 }
-
-
 
 
 /*------------------------------------------------------------------
@@ -3152,6 +3256,7 @@ margin-top: -25px;
 
         font-size: 11px;
         display: block;
+
     }
 
     td.op {
@@ -3160,8 +3265,22 @@ margin-top: -25px;
 
     }
 
+     th.op {
+
+        font-size: 11px;
+
+    }
+
+    .sas {
+
+        text-align: center;
+
+    }
+
 
 }
+
+
 
 tbody {
 
@@ -3182,11 +3301,20 @@ tr {
 
 }
 
+th {
+
+
+    font-size: 18px;
+
+
+}
+
  td {
 
 
 font-size: 18px;
 width: 100%;
+text-align: right;
 }
 
 th, td {
@@ -3232,6 +3360,8 @@ body.host_version .slide-btn.btn-light{
 body.host_version .first-section .effect-1.slide-btn::after{
 	box-shadow: 0 0 0 2px #2d3032;
 }
+
+
 
 
 
@@ -4040,7 +4170,6 @@ opacity: 2px;
 .blog-item2 {
     background: #fff;
     padding: 20px;
-    border-bottom: 1px solid gray;
 }
 
 

@@ -143,10 +143,10 @@ while($rows_noticia = mysqli_fetch_assoc($resultado_noticia)){
 				<div class="col-lg-3 col-12 right-single">
 					<div class="widget-search">
 						<div class="site-search-area">
-							<form method="get" id="site-searchform" action="#">
+							<form method="get" id="site-searchform" action="pesquisaetec.php">
 								<div>
-									<input class="input-text form-control" name="search-k" id="search-k" placeholder="Pesquise..." type="text">
-									<input id="searchsubmit" value="Search" type="submit">
+									<input class="input-text form-control" name="pesquisar" id="search-k" placeholder="Pesquise..." type="text">
+									<button id="searchsubmit" value="Search" type="submit">
 								</div>
 							</form>
 						</div>
@@ -192,6 +192,7 @@ while($rows_noticia = mysqli_fetch_assoc($resultado_noticia)){
 						<div class="blog-desc">
 							<p><?php echo (strlen($rows_noticia['descricao']) > 88 ? substr($rows_noticia['descricao'], 0, 88)."..." : $rows_noticia['descricao']) . "</h3>";?></p>
 						</div>
+
 						<div class="blog-button">
 							
 						</div>

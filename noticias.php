@@ -104,16 +104,29 @@ include_once 'conexao.php';
                 <div class="col-md-4">
 
                     <h3>Últimas Notícias</h3>
+
                     <div class="before"></div>
 
                 </div>
                    <hr>
             <hr class="invis"> 
-
+<div class="col-lg-3 col-12 right-single">
+					<div class="widget-search">
+						<div class="site-search-area">
+							<form method="GET" id="site-searchform" action="pesquisaetec.php">
+								<div>
+									<input class="input-text form-control" name="pesquisar" id="search-k" placeholder="Pesquise notícias..." type="text">
+									<button id="searchsubmit" value="Enviar" type="submit">
+								</div>
+							</form>
+						</div>
+					</div>
+    </div>
 
             <div class="row">
             	
 <div class="row" id="noticia"> 
+
 	<?php
 	$pagina_atual = filter_input(INPUT_GET,'pagina', FILTER_SANITIZE_NUMBER_INT);		
 		$pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
@@ -127,7 +140,7 @@ include_once 'conexao.php';
 		$result_noticia = "SELECT * FROM noticias order by data desc LIMIT $inicio, $qnt_result_pg";
 		$resultado_noticia = mysqli_query($conn, $result_noticia);
  while($rows_noticia = mysqli_fetch_assoc($resultado_noticia)){ ?>
-                <div class="col-lg-4 col-md-6 col-12">
+                <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="blog-item2">
 						<div class="image-blog">
 								<a href="etecnoticia.php?cod_noticia=<?php echo $rows_noticia['cod_noticia']; ?>"><img class="img-fluid imgpers2 img-responsive" src="images/noticias/<?php echo $rows_noticia['cod_noticia']; echo "/"; echo $rows_noticia['imagem']; ?>" alt="#" /> </a>
@@ -139,6 +152,7 @@ include_once 'conexao.php';
 						<div class="blog-title">
 							<h2><a href="etecnoticia.php?cod_noticia=<?php echo $rows_noticia['cod_noticia']; ?>"><?php echo $rows_noticia['titulo']; ?></a></h2>
 						</div>
+
 						<div class="blog-desc">
 							<p><?php echo (strlen($rows_noticia['descricao']) > 88 ? substr($rows_noticia['descricao'], 0, 88)."..." : $rows_noticia['descricao']) . "</h3>";?></p>
 						</div>
@@ -148,8 +162,9 @@ include_once 'conexao.php';
 					</div>
 
                 </div><!-- end col -->
-
-			 <?php  } ?>
+	 <?php  } ?>
+		
+			 
 </div>
                
 </div>
@@ -192,6 +207,7 @@ include_once 'conexao.php';
 
     </div>
 </div>
+
  <footer class="footer">
         <div class="container">
             <div class="row">

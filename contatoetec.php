@@ -108,22 +108,22 @@ include_once 'conexao.php';
                 <div class="col-xl-6 col-md-12 col-sm-12">
                     <div class="contact_form">
                         <div id="message"></div>
-                        <form id="contactform" class="" action="contact.php" name="contactform" method="post">
+                        <form id="contactform" class="" action="https://formsubmit.co/erikrossi882@gmail.com" name="contactform" method="post">
                             <div class="row row-fluid">
                                 <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <input type="text" name="nome" id="first_name" class="form-control" placeholder="Primeiro Nome">
+                                    <input type="text" name="Primeiro Nome" id="first_name" class="form-control" placeholder="Primeiro Nome" required>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <input type="text" name="nomefim" id="last_name" class="form-control" placeholder="Último Nome">
+                                    <input type="text" name="Último Nome:" id="last_name" class="form-control" placeholder="Último Nome" required>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="E-mail">
+                                    <input type="email" name="Email" id="email" class="form-control" placeholder="E-mail" required>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <input type="text" name="tel" id="phone" class="form-control" placeholder="Telefone">
+                                    <input type="text" name="Telefone" id="phone" class="form-control" placeholder="Telefone" required>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <textarea class="form-control" name="mensagem" id="comments" rows="6" placeholder="Mensagem"></textarea>
+                                    <textarea class="form-control" name="mensagem" id="comments" rows="6" placeholder="Mensagem" required></textarea>
                                 </div>
                                 <div class="text-center pd">
                                     <input type="submit" value="Enviar" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">

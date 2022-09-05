@@ -1,15 +1,8 @@
 <?php
 include_once 'conexao.php';
-$cod_evento = filter_input(INPUT_GET, 'cod_evento', FILTER_SANITIZE_NUMBER_INT);
-$result_evento = "SELECT * FROM eventos where cod_evento = $cod_evento order by data desc";
-		$resultado_evento = mysqli_query($conn, $result_evento);
-
-
-
-while($rows_evento = mysqli_fetch_assoc($resultado_evento)){ 
 ?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
     <!-- Basic -->
     <meta charset="utf-8">
@@ -19,7 +12,7 @@ while($rows_evento = mysqli_fetch_assoc($resultado_evento)){
     <meta name="viewport" content="width=device-width, initial-scale=1">
  
      <!-- Site Metas -->
-   <title><?php echo $rows_evento['titulo']; ?></title>  
+   <title>ETEC Amim Jundi - Links Úteis</title>  
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -84,131 +77,70 @@ while($rows_evento = mysqli_fetch_assoc($resultado_evento)){
 							</div>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="noticias.php">Notícias</a></li>
-						<li class="nav-item active"><a class="nav-link" href="eventos.php">Eventos</a></li>
+						<li class="nav-item"><a class="nav-link" href="eventos.php">Eventos</a></li>
 						<li class="nav-item"><a class="nav-link" href="https://www.vestibulinhoetec.com.br/home/" target="_blank">Vestibulinho</a></li>
-						<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="dropdown-b">Sobre</a>
+						<li class="nav-item dropdown active">
+						<a class="nav-link dropdown-toggle " href="#" id="dropdown-b">Sobre</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown-b">
 								<a class="dropdown-item" id="dropdown-item" href="equipeetec.php">Equipe de Trabalho </a>
 								<a class="dropdown-item" href="calendarioetec.php">Calendário Escolar </a>
 								<a class="dropdown-item" href="legisletec.php">Legislação </a>
 								<a class="dropdown-item" href="apm.php">APM </a>
 								<a class="dropdown-item" href="downloads.php">Downloads </a>
-								<a class="dropdown-item" href="links.php">Links Úteis </a>
+								<a class="dropdown-item active" href="links.php">Links Úteis </a>
 							</div>
 					</li>
 						<li class="nav-item"><a class="nav-link" href="contatoetec.php">Contato</a></li>
 					</ul>
 				</div>
-active			</div>
+			</div>
 		</nav>
 	</header>
 	<!-- End header -->
-
+	
     <div id="overviews" class="section wb">
-        <div class="container">
-            <div class="row"> 
-
-                <div class="col-lg-9 blog-post-single">
-                    <div class="blog-item">
-						<div class="image-blog">
-							<img src="images/eventos/<?php echo $rows_evento['cod_evento']; echo "/"; echo $rows_evento['imagem']; ?>" alt="" class="img-fluid">
-						</div>
-						<div class="post-content">
-		
-							<div class="meta-info-blog">
-								<span><i class="fa fa-calendar"></i> <a href="#"><?php echo date('d/m/Y', strtotime($rows_evento['data'])); ?></a> </span>
-								<span><i class="fa fa-tag"></i>  <a href="#">Evento</a> </span>
-							</div>
-							<div class="blog-title">
-								
-							</div>
-							<br>
-							<div class="blog-desc">
-								<p><?php echo $rows_evento['descricao']; ?></p>
-								
-							</div>							
-						</div>
-					</div>
-					<?php } ?>
-				
-					
-					<div class="blog-comments">
-						
-					</div>
-					
-					
-                </div><!-- end col -->
-
-				<div class="col-lg-3 col-12 right-single">
-					<div class="widget-search">
-						<div class="site-search-area">
-							<form method="get" id="site-searchform" action="pesquisaetecevento.php">
-								<div>
-									<input class="input-text form-control" name="pesquisar" id="search-k" placeholder="Pesquise..." type="text">
-									<button id="searchsubmit" value="Search" type="submit">
-								</div>
-							</form>
-						</div>
-					</div>
-					
-				
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end section -->
-
-<div id="overviews" class="section wb">
         <div class="container">
             <div class="section-title row text-center">
                 <div class="col-md-4">
 
-                    <h3>Últimos Eventos</h3>
-                    <div class="before"></div>
+                    <h3 class="left">Links Úteis</h3>
 
                 </div>
                    <hr>
             <hr class="invis"> 
+                   </div>
+<p class="lead"><a href="http://bdtd.ibict.br/vufind/" target="_blank">Biblioteca Digital Brasileira de Teses e Dissertações</a></p>
+<br>
+<p class="lead"><a href="https://scielo.org/" target="_blank">Scielo - Scientific Electronic Library Online</p></a>
+<br>
+<p class="lead"><a href="http://www.etec.sp.gov.br/view/Default.aspx" target="_blank">E-mail Institucional da Etec</p></a>
+<br>
+<p class="lead"><a href="http://www.e-folha.prodesp.sp.gov.br/desc_dempagto/entrada_atest.asp?cliente=092&prod=atest" target="_blank">Informe de Rendimentos</p></a>
+<br>
+<p class="lead"><a href="https://cetec.cps.sp.gov.br/" target="_blank">Coordenadoria do Ensino Médio e Técnico - CETEC</p></a>
+<br>
+<p class="lead"><a href="https://www.cursosviarapida.sp.gov.br/home" target="_blank">Via Rápida Emprego</p></a>
+<br>
+<p class="lead"><a href="http://websai.cps.sp.gov.br/" target="_blank">Pesquisa WEBSAI</p></a>
+<br>
+<p class="lead"><a href="https://www.vestibulinhoetec.com.br/home/" target="_blank">Vestibulinho</p></a>
+<br>
+<p class="lead"><a href="https://crt.cps.sp.gov.br/" target="_blank">Catálogo de Requisito de Titulação</p></a>
+<br>
+<p class="lead"><a href="https://recadastramentoanual.sp.gov.br/recadastramentoanual/noauth/LoginPrepare.do" target="_blank">Recadastramento Anual de Servidores</p>
+<br>
+<p class="lead"><a href="http://www.e-folha.prodesp.sp.gov.br/desc_dempagto/entrada.asp?cliente=092" target="_blank">Demonstrativo de pagamento on line</p>
+<br>
+<p class="lead"><a href="https://www.saopaulo.sp.gov.br/" target="_blank">Governo do Estado de São Paulo</p>
+<br>
+<p class="lead"><a href="https://www.cps.sp.gov.br/" target="_blank">Centro Paula Souza</p>
+<br>
+</a>
 
 
-            <div class="row">
-            	
-<div class="row" id="evento"> 
-	<?php
-		$result_evento2 = "SELECT * FROM eventos where cod_evento <> $cod_evento order by data desc limit 6";
-		$resultado_evento2 = mysqli_query($conn, $result_evento2);
- while($rows_evento = mysqli_fetch_assoc($resultado_evento2)){ ?>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="blog-item2">
-						<div class="image-blog">
-								<a href="etecevento.php?cod_evento=<?php echo $rows_evento['cod_evento']; ?>"><img class="img-fluid imgpers2 img-responsive" src="images/eventos/<?php echo $rows_evento['cod_evento']; echo "/"; echo $rows_evento['imagem']; ?>" alt="#" /> </a>
-						</div>
-						<div class="meta-info-blog">
-							<span><i class="fa fa-calendar"></i> <a href="#evento"><?php echo date('d/m/Y', strtotime($rows_evento['data'])); ?></a> </span>
-                            <span><i class="fa fa-tag"></i>  <a href="#evento">Evento</a> </span>
-						</div>
-						<div class="blog-title">
-							<h2><a href="etecevento.php?cod_evento=<?php echo $rows_evento['cod_evento']; ?>"><?php echo $rows_evento['titulo']; ?></a></h2>
-						</div>
-						<div class="blog-desc">
-							<p><?php echo (strlen($rows_evento['descricao']) > 88 ? substr($rows_evento['descricao'], 0, 88)."..." : $rows_evento['descricao']) . "</h3>";?></p>
-						</div>
-						<div class="blog-button">
-							
-						</div>
-					</div>
-
-                </div><!-- end col -->
-
-			 <?php  } ?>
-</div>
-<div class="message-box2 center">
-               <a href="eventos.php" class="hover-btn-new orange"><span>Ler mais</span></a>
-           </div>
-</div>
-</div>
+    </div>
 </div>
 
-           
  <footer class="footer">
         <div class="container">
             <div class="row">

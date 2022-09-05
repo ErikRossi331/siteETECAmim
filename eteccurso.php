@@ -5,7 +5,7 @@ $cod_curso = filter_input(INPUT_GET, 'cod_curso', FILTER_SANITIZE_NUMBER_INT);
 $result_cursos = "SELECT * FROM cursos where cod_curso = $cod_curso";
 $resultado_cursos = mysqli_query($conn, $result_cursos);
 
-$result_cursos2 = "SELECT * FROM professores where curso like '%$cod_curso%';";
+$result_cursos2 = "SELECT * FROM professores where curso like '%$cod_curso%' order by nome asc;";
 $resultado_cursos2 = mysqli_query($conn, $result_cursos2); 
 
 $result_cursos3 = "SELECT * FROM matriz where matrizcurso like '%$cod_curso%' AND periodo like '%1º%';"; 
@@ -301,15 +301,15 @@ $i++;
     	<table>
                                         <tr>
                                           
-                                            <td class="op"><strong>Titulação:</strong></td>
+                                            <th class="op">Titulação:</td>
                                             <td class="op"> <?php echo $rows_cursos2['titulacao']; ?></td>
                                         </tr>
                                         <tr>
-                                        	 <td class="op"><strong>Área de Conhecimento:</strong></td>
+                                        	 <th class="op">Área de Conhecimento:</td>
                                             <td class="op"><?php echo $rows_cursos2['area']; ?></td>
                                         </tr>
                                         <tr>
-                                            <td class="op"><strong>E-mail:</strong></td>
+                                            <th class="op">E-mail:</td>
                                             <td></td>
                                         </tr>
                                     </table>
