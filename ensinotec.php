@@ -524,7 +524,7 @@ $resultado_cursos5 = mysqli_query($conn, $result_cursos5);
                 </div>
 
 </div>
-
+<br><br>
  <footer class="footer">
 
         <div class="container">

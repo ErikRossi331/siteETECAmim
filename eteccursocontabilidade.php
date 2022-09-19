@@ -113,7 +113,7 @@ $row_cursostodos6 = mysqli_fetch_assoc($resultado_cursostodos6);
 	<!-- END LOADER -->	
 
     <!-- Start header -->
-	<header class="top-navbar">
+	<header class="top-navbar" id="navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="index.php">
@@ -480,7 +480,8 @@ $i++;
         <div class="container">
              <div class="section-title row text-center">
                 <div class="col-md-8 offset-md-2">
-                    <h3>Outros Cursos</h3>
+                    <h3>Confira outros cursos oferecidos:</h3>
+
                 </div>
             </div><!-- end title -->
 <div class="row">
@@ -653,7 +654,7 @@ $i++;
 
 
 
-
+<br><br>
 
  <footer class="footer">
 

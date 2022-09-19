@@ -108,6 +108,18 @@ include_once 'conexao.php';
                 </div>
                    <hr>
             <hr class="invis"> 
+            <div class="col-lg-3 col-12 right-single">
+                    <div class="widget-search">
+                        <div class="site-search-area">
+                            <form method="get" id="site-searchform" action="pesquisaetecdownloads.php">
+                                <div>
+                                    <input class="input-text form-control" name="pesquisar" id="search-k" placeholder="Pesquise..." type="text">
+                                    <button id="searchsubmit" value="Enviar" type="submit">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+    </div>
                    </div>
 
 <?php

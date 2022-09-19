@@ -22,6 +22,13 @@
     SKELETON
 -------------------------------------------------------------------*/
 
+html {
+
+    overflow-x: hidden;
+
+}
+
+
 body {
     color: #333333;
     font-size: 14px;
@@ -43,9 +50,16 @@ body {
 
 @media screen and (max-width: 1200px) {
 .before {
-    margin: 0 auto;
-    right: 0;
+margin: 0 auto;
+right: 0;
+}
+}
 
+@media screen and (max-width: 599px) {
+.before {
+    margin: 0, auto;
+    right: 7.5vh;
+    top: 3.5vh;
 }
 }
 
@@ -120,6 +134,30 @@ left: 17rem;
 left: 10rem;
 
 }
+
+.course-meta-bot3 ul li {
+
+        font-size: 14px !important;
+
+    }
+}
+
+@media only screen and (max-width: 425px) {
+
+.page-link {
+
+left: 5rem !important;
+
+}
+}
+
+@media only screen and (max-width: 480px) {
+
+.page-link {
+
+left: 7rem;
+
+}
 }
 
 @media only screen and (max-width: 530px) {
@@ -131,7 +169,24 @@ left: 8rem;
 }
 }
 
+@media only screen and (max-width: 512px) {
 
+
+a.btn-ol {
+
+font-size: 9px !important;
+}
+
+}
+
+
+@media only screen and (min-width: 280px) and (max-width: 599px) {
+.section-title h3 {
+    font-size: 16px !important;
+
+}
+
+}
 
 body.demos .section {
     background: url(images/bg.png) repeat top center #f2f3f5;
@@ -3395,7 +3450,7 @@ body.host_version .first-section .effect-1.slide-btn::after{
 @media screen and (max-width: 1200px) {
 .all-title-box2 h1 {
     
-font-size: 48px;
+font-size: 40px;
 
 }
 }

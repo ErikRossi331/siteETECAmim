@@ -88,7 +88,7 @@ $resultado_evento = mysqli_query($conn, $eventos);
 	
 	<!-- Start header -->
 	<header class="top-navbar">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbars">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="index.php">
 					<img src="images/eteclogo.png" class="etecimg" height="120px" alt="" />
@@ -594,6 +594,7 @@ $resultado_evento = mysqli_query($conn, $eventos);
     <script src="js/all.js"></script>
     <!-- ALL PLUGINS -->
     <script src="js/custom.js"></script>
+    <script src="js/navbar.js"></script>
 	<script src="js/timeline.min.js"></script>
 
 </body>

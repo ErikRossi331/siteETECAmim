@@ -147,7 +147,7 @@ include_once 'conexao.php';
 						</div>
 						<div class="meta-info-blog">
 							<span><i class="fa fa-calendar"></i> <a href="#noticia"><?php echo date('d/m/Y', strtotime($rows_noticia['data'])); ?></a> </span>
-                            <span><i class="fa fa-tag"></i>  <a href="#noticia">Notícia</a> </span>
+                            <span><i class="fa fa-tag"></i>  <a href="#noticia">NOTÍCIA</a> </span>
 						</div>
 						<div class="blog-title">
 							<h2><a href="etecnoticia.php?cod_noticia=<?php echo $rows_noticia['cod_noticia']; ?>"><?php echo $rows_noticia['titulo']; ?></a></h2>

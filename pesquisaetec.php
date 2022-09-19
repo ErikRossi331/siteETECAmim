@@ -133,7 +133,7 @@ include_once 'conexao.php';
 		$pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
 		
 		//Setar a quantidade de itens por pagina
-		$qnt_result_pg = 12;
+		$qnt_result_pg = 6;
 		
 		//calcular o inicio visualização
 		$inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
@@ -147,7 +147,7 @@ include_once 'conexao.php';
 						</div>
 						<div class="meta-info-blog">
 							<span><i class="fa fa-calendar"></i> <a href="#noticia"><?php echo date('d/m/Y', strtotime($rows_noticia['data'])); ?></a> </span>
-                            <span><i class="fa fa-tag"></i>  <a href="#noticia">Notícia</a> </span>
+                            <span><i class="fa fa-tag"></i>  <a href="#noticia">NOTÍCIA</a> </span>
 						</div>
 						<div class="blog-title">
 							<h2><a href="etecnoticia.php?cod_noticia=<?php echo $rows_noticia['cod_noticia']; ?>"><?php echo $rows_noticia['titulo']; ?></a></h2>
@@ -183,8 +183,9 @@ include_once 'conexao.php';
 		$max_links = 2;
 		echo "
 <nav aria-label='Page navigation example'>
-  <ul class='pagination center'>";
-		
+  <ul class='pagination center'>"?>
+<li class='page-item'><a class='page-link' href='pesquisaetec.php?pagina=<?php echo 1 ?>&pesquisar=<?php echo $valor_pesquisar; ?>'><span aria-hidden='true'>Primeira</span></a>
+<?php
 		for($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++){
 			if($pag_ant >= 1){ ?>
 				<li class='page-item'><a class='page-link' href='pesquisaetec.php?pagina=<?php echo $pag_ant; ?>&pesquisar=<?php echo $valor_pesquisar; ?>'><?php echo $pag_ant ?></a></li>
@@ -200,9 +201,9 @@ include_once 'conexao.php';
 
 			<?php } 
 		}
+			?>	
+<li class='page-item'><a class='page-link' href='pesquisaetec.php?pagina=<?php echo $quantidade_pg; ?>&pesquisar=<?php echo $valor_pesquisar; ?>'><span aria-hidden='true'>Última</span></a>
 		
-		
-		?>		
 
     </div>
 </div>

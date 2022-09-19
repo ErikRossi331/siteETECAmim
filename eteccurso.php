@@ -11,7 +11,7 @@ $resultado_cursos2 = mysqli_query($conn, $result_cursos2);
 $result_cursos3 = "SELECT * FROM matriz where matrizcurso like '%$cod_curso%' AND periodo like '%1º%';"; 
 $resultado_cursos3 = mysqli_query($conn, $result_cursos3); 
 
-$result_cursos4 = "SELECT * FROM matriz where matrizcurso like '%$cod_curso%' AND periodo like '%2º%' and cod_disc not between 133 and 135;"; 
+$result_cursos4 = "SELECT * FROM matriz where matrizcurso like '%$cod_curso%' AND periodo like '%2º%' and cod_disc not between 133 and 135 order by cod_disc asc;"; 
 $resultado_cursos4 = mysqli_query($conn, $result_cursos4); 
 
 $result_cursos5 = "SELECT * FROM matriz where matrizcurso like '%$cod_curso%' AND periodo like '%3º%' and cod_disc not between 131 and 133;"; 
@@ -346,7 +346,7 @@ $i++;
                     <h3>Matriz Curricular</h3>
                     <p class="lead">
 
-  <a class="btn-ol btn btn-danger" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
+  <a class="btn-ol2 btn btn-danger" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
     <i class="fa fa-calendar-plus-o"></i>  <?php echo $row_cursos3['periodo']; ?>
 
   </a>
@@ -401,7 +401,7 @@ $i++;
 
 </div>
   <br>
-  <a class="btn-ol btn btn-danger" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
+  <a class="btn-ol2 btn btn-danger" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
     <i class="fa fa-calendar-plus-o"></i>  <?php echo $row_cursos4['periodo']; ?>
 
   </a>
@@ -449,7 +449,7 @@ $i++;
     </div>
 </div>
 <br><br>
-  <a class="btn-ol btn btn-danger" data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample">
+  <a class="btn-ol2 btn btn-danger" data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample">
     <i class="fa fa-calendar-plus-o"></i>  <?php echo $row_cursos5['periodo']; ?>
 
   </a>
@@ -538,7 +538,7 @@ $i++;
         <div class="container">
              <div class="section-title row text-center">
                 <div class="col-md-8 offset-md-2">
-                    <h3>Outros Cursos</h3>
+                    <h3>Confira outros cursos oferecidos:</h3>
                 </div>
             </div><!-- end title -->
 <div class="row">
@@ -711,7 +711,7 @@ $i++;
 
 
    
-
+<br><br>
  <footer class="footer">
 
         <div class="container">

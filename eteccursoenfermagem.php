@@ -586,7 +586,7 @@ $i++;
         <div class="container">
              <div class="section-title row text-center">
                 <div class="col-md-8 offset-md-2">
-                    <h3>Outros Cursos</h3>
+                    <h3>Confira outros cursos oferecidos:</h3>
                 </div>
             </div><!-- end title -->
 <div class="row">
@@ -758,7 +758,7 @@ $i++;
            </div>
 
 
-
+<br><br>
  <footer class="footer">
 
         <div class="container">
