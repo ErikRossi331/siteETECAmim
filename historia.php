@@ -1,22 +1,4 @@
-<?php
-include_once 'conexao.php';
-$result_cursos = "SELECT * FROM cursos where eixo = 'Ambiente e Saúde' order by nome asc;";
-$resultado_cursos = mysqli_query($conn, $result_cursos);
 
-$result_cursos2 = "SELECT * FROM cursos where eixo = 'Gestão e Negócios' order by nome asc;";
-$resultado_cursos2 = mysqli_query($conn, $result_cursos2);
-
-$result_cursos3 = "SELECT * FROM cursos where eixo = 'Informação e Comunicação' order by nome asc;";
-$resultado_cursos3 = mysqli_query($conn, $result_cursos3);
-
-$result_cursos4 = "SELECT * FROM cursos where eixo = 'Produção Industrial' order by nome asc;";
-$resultado_cursos4 = mysqli_query($conn, $result_cursos4);
-
-$result_cursos5 = "SELECT * FROM cursos where eixo = 'Segurança' order by nome asc;";
-$resultado_cursos5 = mysqli_query($conn, $result_cursos5);
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -367,7 +349,7 @@ Atualmente, a Etec conta com mais de 1000 alunos matriculados.<br>
 <center>
 <h1 id="local"> Localização </h1>
 
-<iframe id="mapaetec" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14818.799124351128!2d-50.876762!3d-21.7918773!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6dd14c0019ef55f3!2sEtec%20Amim%20Jundi!5e0!3m2!1spt-BR!2sbr!4v1660228689660!5m2!1spt-BR!2sbr" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe id="mapaetec" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14818.799124351128!2d-50.876762!3d-21.7918773!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6dd14c0019ef55f3!2sEtec%20Amim%20Jundi!5e0!3m2!1spt-BR!2sbr!4v1660228689660!5m2!1spt-BR!2sbr" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </center>
 <br><br>
             </div>

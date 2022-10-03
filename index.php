@@ -30,6 +30,11 @@ $resultado_noticia = mysqli_query($conn, $noticias);
 $eventos = "SELECT * FROM eventos order by data desc limit 3;";
 $resultado_evento = mysqli_query($conn, $eventos);
 
+$avisos = "SELECT * FROM avisos order by cod_banner desc limit 1;";
+$resultado_aviso = mysqli_query($conn, $avisos);
+$row_avisos = mysqli_fetch_assoc($resultado_aviso);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -70,6 +75,7 @@ $resultado_evento = mysqli_query($conn, $eventos);
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 
 </head>
 <body class="host_version"> 
@@ -130,7 +136,22 @@ $resultado_evento = mysqli_query($conn, $eventos);
 		</nav>
 	</header>
 	<!-- End header -->
-	
+	<script type="text/javascript">
+    $(window).on('load', function() {
+        $('#myModal').modal('show');
+    });
+</script>
+
+<div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+		<a class="modal-content" href="<?php echo $row_avisos['link'] ?>">
+      <img src="images/banner/<?php echo $row_avisos['nome'] ?>">
+</a>
+    </div>
+  </div>
+</div>
+
 	<div id="carouselExampleControls" class="carousel slide bs-slider box-slider" data-ride="carousel" data-pause="hover" data-interval="false" >
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
@@ -209,7 +230,7 @@ $resultado_evento = mysqli_query($conn, $eventos);
 				
 				<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <div class="post-media wow fadeIn">
-                      <iframe width="560" height="315" src="https://www.youtube.com/embed/q2pa0WSXAG8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      <iframe width="100%" height="315" src="https://www.youtube.com/embed/q2pa0WSXAG8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div><!-- end media -->
                 </div><!-- end col -->
 			</div>
@@ -596,6 +617,7 @@ $resultado_evento = mysqli_query($conn, $eventos);
     <script src="js/custom.js"></script>
     <script src="js/navbar.js"></script>
 	<script src="js/timeline.min.js"></script>
+	<script src="js/modal.js"></script>
 
 </body>
 </html>

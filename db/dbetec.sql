@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 19-Set-2022 às 01:42
+-- Tempo de geração: 03-Out-2022 às 03:22
 -- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `dbetec`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `avisos`
+--
+
+DROP TABLE IF EXISTS `avisos`;
+CREATE TABLE IF NOT EXISTS `avisos` (
+  `cod_banner` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(8) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `link` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`cod_banner`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `avisos`
+--
+
+INSERT INTO `avisos` (`cod_banner`, `nome`, `link`) VALUES
+(1, '1.jpg', 'https://www.etecamimjundi.com.br/');
 
 -- --------------------------------------------------------
 
@@ -71,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `cursos` (
   `banner` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
   `eixo2` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`cod_curso`)
-) ENGINE=MyISAM AUTO_INCREMENT=2823 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2824 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `cursos`
@@ -850,12 +871,12 @@ INSERT INTO `professores` (`cod_prof`, `nome`, `titulacao`, `curso`, `area`, `em
 (1, 'Cesar Augusto Pinheiro Vitor', 'Especialista', '15 10 29 28 29', 'Tecnologia da Informação', 'cesar.vitor01@etec.sp.gov.br'),
 (2, 'Rosiane Wolf Luz', 'Mestre', '28 15 26 10', 'Tecnologia da Informação', 'rosiwluz@gmail.com'),
 (3, 'Daiane Marcela Piccolo', 'Mestre', '28 15 26', 'Tecnologia da Informação', ''),
-(4, 'André Eduardo de Souza', 'Especialista', '31', 'Gestão e Negócios', 'andre.souza@etec.sp.gov.br'),
-(5, 'Antonio Carlos Baratella', 'Especialista', '31 24 11', 'Gestão e Negócios', 'prof.baratella@gmail.com'),
+(4, 'André Eduardo de Souza', 'Especialista', '31 21', 'Gestão e Negócios', 'andre.souza@etec.sp.gov.br'),
+(5, 'Antonio Carlos Baratella', 'Especialista', '31 24 11 21', 'Gestão e Negócios', 'prof.baratella@gmail.com'),
 (6, 'Diego César Rodrigues', 'Especialista', '24 11', 'Direito', ''),
 (7, 'Eduardo de Souza Pontes', 'Especialista', '10', 'Letras: Português e Inglês', 'eduardo.pontes10@etec.sp.gov.br'),
-(8, 'Elaine Uranga Clivelaro Buturi', 'Especialista', '10 31 16', 'Letras: Português e Inglês', ''),
-(9, 'Gilson da Silva', 'Especialista', '31 24 29 11', 'Gestão e Negócios', 'profgsilva@gmail.com'),
+(8, 'Elaine Uranga Clivelaro Buturi', 'Especialista', '10 31 16 21', 'Letras: Português e Inglês', ''),
+(9, 'Gilson da Silva', 'Especialista', '31 24 29 11 21', 'Gestão e Negócios', 'profgsilva@gmail.com'),
 (10, 'José Aurélio Pieretti', 'Especialista', '', '', ''),
 (11, 'Osmar Campanari', 'Especialista', '24', 'Gestão e Negócios', ''),
 (12, 'Paulo Sérgio Finoti', 'Especialista', '', 'Gestão e Negócios', ''),
@@ -865,31 +886,31 @@ INSERT INTO `professores` (`cod_prof`, `nome`, `titulacao`, `curso`, `area`, `em
 (16, 'Santo de Jesus Pelloso', 'Especialista', '27', 'Química', 'santo.pelloso@etec.sp.gov.br'),
 (17, 'Sérgio Roberto Octaviano', 'Especialista', '', 'Gestão e Negócios', ''),
 (18, 'Vicente Hideo Oyama', 'Especialista', '', '', ''),
-(19, 'Bruno Zaneli Campanari', 'Licenciado', '10 31 27 16', 'Física/Química', 'zaneli93@gmail.com'),
+(19, 'Bruno Zaneli Campanari', 'Licenciado', '10 31 27 16 21', 'Física/Química', 'zaneli93@gmail.com'),
 (20, 'Mário André Gimenes Otoboni', 'Licenciado', '', '', 'mario.otoboni@etec.sp.gov.br'),
 (21, 'Éder Aparecido de Sousa', 'Mestre', '31 24 11', 'Gestão e Negócios', 'eder.sousa@etec.sp.gov.br'),
-(22, 'Éverton Henrique Gonçales Cardoso', 'Mestre', '10 31 27 16', 'Geografia', 'evertonhgcardoso@gmail.com'),
-(23, 'José Cláudio Pecini', 'Mestre', '10 31 27 16', 'História/Sociologia e Filosofia', 'histjc@yahoo.com.br'),
-(24, 'Leonardo Oliveira Buturi', 'Mestre', '10 31 27 16', 'Matemática/Física', 'leobuturi@gmail.com'),
-(25, 'Marcelo Aparecido Decurcio', 'Mestre', '16', 'Letras: Português e Inglês', ''),
-(26, 'Marinaldo Zago', 'Mestre', '10 27 16', 'Matemática', ''),
+(22, 'Éverton Henrique Gonçales Cardoso', 'Mestre', '10 31 27 16 21', 'Geografia', 'evertonhgcardoso@gmail.com'),
+(23, 'José Cláudio Pecini', 'Mestre', '10 31 27 16 21', 'História/Sociologia e Filosofia', 'histjc@yahoo.com.br'),
+(24, 'Leonardo Oliveira Buturi', 'Mestre', '10 31 27 16 21', 'Matemática/Física', 'leobuturi@gmail.com'),
+(25, 'Marcelo Aparecido Decurcio', 'Mestre', '16 21', 'Letras: Português e Inglês', ''),
+(26, 'Marinaldo Zago', 'Mestre', '10 27 16 21', 'Matemática', ''),
 (27, 'Rodrigo da Silva Stecca', 'Mestre', '', 'Gestão e Negócios', 'rodrigostecca@etec.sp.gov.br'),
-(28, 'Rodrigo Fernandes', 'Mestre', '31', 'Gestão e Negócios', 'rodrigo.fernandes1@etec.sp.gov.br'),
-(29, 'Thiago Talon de Oliveira Carreira', 'Mestre', '31 24 11', 'Gestão e Negócios', ''),
+(28, 'Rodrigo Fernandes', 'Mestre', '31 21', 'Gestão e Negócios', 'rodrigo.fernandes1@etec.sp.gov.br'),
+(29, 'Thiago Talon de Oliveira Carreira', 'Mestre', '31 24 11 21', 'Gestão e Negócios', ''),
 (30, 'Mariani Armagni Ciciliati', 'Doutor', '', 'Química', ''),
-(31, 'Adriana Ferreira Barbosa', 'Especialista', '10 31 27 16', 'Química', ''),
-(32, 'Adriana Regina Pinto Tomaz', 'Especialista', '10 31 27', 'Tecnologia da Informação', 'adrianatmz@gmail.com'),
+(31, 'Adriana Ferreira Barbosa', 'Especialista', '10 31 27 16 21', 'Química', ''),
+(32, 'Adriana Regina Pinto Tomaz', 'Especialista', '10 31 27 21', 'Tecnologia da Informação', 'adrianatmz@gmail.com'),
 (33, 'Andréa Márcia Pinto Finote', 'Especialista', '', 'Enfermagem', ''),
 (34, 'Andréia Maria Silva Duarte', 'Especialista', '', '', ''),
 (35, 'Caroline Martins Sampaio', 'Especialista', '22', 'Tecnologia da Informação', ''),
-(36, 'Célia Aparecida de Lima Pereira', 'Especialista', '10 31 27 16', 'Ciências Humanas e Sociais', ''),
+(36, 'Célia Aparecida de Lima Pereira', 'Especialista', '10 31 27 16 21', 'Ciências Humanas e Sociais', ''),
 (37, 'Cristiane Vanda dos Santos Marchan', 'Especialista', '10 29', 'Tecnologia da Informação', 'cristiane.vanda@etec.sp.gov.br'),
 (38, 'Edelma Alencar Lima Jacob', 'Especialista', '22 27', 'Química', 'edelma.prof@gmail.com'),
 (39, 'Fernanda Moreira Ferreira', 'Especialista', '31 11', 'Gestão e Negócios', ''),
 (40, 'Liliane Oliveira Sakano', 'Especialista', '', 'Enfermagem', ''),
 (41, 'Lucimara Alves de Aguiar Basso', 'Especialista', '10 31 27 16', 'Letras: Português e Inglês', 'lucimara.basso@etec.sp.gov.br'),
 (42, 'Mara Regina Arenhardt Tomaz', 'Especialista', '', 'Segurança do Trabalho', 'mareartomaz@gmail.com'),
-(43, 'Marielli Galheira Uranga Peixoto', 'Especialista', '10 31 27 24 11', 'Letras: Português e Inglês', ''),
+(43, 'Marielli Galheira Uranga Peixoto', 'Especialista', '10 31 27 24 11 21', 'Letras: Português e Inglês', ''),
 (44, 'Marisa Castilho Mendes Penga', 'Especialista', '', 'Letras: Português e Inglês', 'mcastilho.penga@gmail.com'),
 (45, 'Marla Penasso Brozulato Monarin', 'Especialista', '22 27', 'Farmácia', ''),
 (46, 'Miriam de Oliveira Nascimento', 'Especialista', '', '', ''),
@@ -900,26 +921,26 @@ INSERT INTO `professores` (`cod_prof`, `nome`, `titulacao`, `curso`, `area`, `em
 (52, 'Tatiana Galassi', 'Especialista', '', 'Farmácia', ''),
 (53, 'Viviane Pelloso Voznhaki', 'Especialista', '', '', ''),
 (54, 'Zilda Lopes Mio', 'Especialista', '', 'Enfermagem', ''),
-(55, 'Jaine Daniele Rodrigues de Souza Ribeiro', 'Especialista', '11', 'Gestão e Negócios', ''),
+(55, 'Jaine Daniele Rodrigues de Souza Ribeiro', 'Especialista', '11 21', 'Gestão e Negócios', ''),
 (56, 'Leila Ribeiro Bizuti', 'Licenciado', '10 31', 'Letras: Português e Inglês', ''),
 (57, 'Mariana Pimenta Bernardes', 'Licenciado', '31', 'Geografia', ''),
-(58, 'Paula Rived Garcia', 'Licenciado', '10 31 27 16', 'Educação Física', 'paula.rived@gmail.com'),
-(59, 'Aline Bezerra da Silva', 'Mestre', '11', 'Gestão e Negócios', ''),
+(58, 'Paula Rived Garcia', 'Licenciado', '10 31 27 16 21', 'Educação Física', 'paula.rived@gmail.com'),
+(59, 'Aline Bezerra da Silva', 'Mestre', '11 21', 'Gestão e Negócios', ''),
 (60, 'Camila de Souza Prazeres', 'Mestre', '', 'Enfermagem', ''),
 (61, 'Fernanda Cathusca Morelli Silva', 'Mestre', '27', 'Química', 'fermorelli.silva@gmail.com'),
-(62, 'Fernanda Siquini Valenciano', 'Mestre', '10 31 27 16', 'Letras: Português e Inglês', ''),
+(62, 'Fernanda Siquini Valenciano', 'Mestre', '10 31 27 16 21', 'Letras: Português e Inglês', ''),
 (63, 'Franciele Facco de Carvalho', 'Mestre', '', 'Enfermagem', 'franfacco@yahoo.com.br'),
 (64, 'Letícia Maria Galdino de Oliveira', 'Mestre', '10 29', 'Tecnologia da Informação', 'leticia.oliveira@etec.sp.gov.br'),
-(65, 'Luciana Akemi Kimura', 'Mestre', '10 31 27 16', 'Biologia', ''),
+(65, 'Luciana Akemi Kimura', 'Mestre', '10 31 27 16 21', 'Biologia', ''),
 (66, 'Rebeca Zuliani Galvão', 'Mestre', '22 27', 'Química', ''),
 (67, 'Renata Luciana Coneglian Facco', 'Mestre', '', 'Enfermagem', ''),
 (68, 'Rosângela de Carvalho Sufi', 'Mestre', '', 'Direito', ''),
-(70, 'Simone Confortini Correia', 'Especialista', '10 31 27', 'Tecnologia da Informação', 'simone.confortini@etec.sp.gov.br'),
+(70, 'Simone Confortini Correia', 'Especialista', '10 31 27 21', 'Tecnologia da Informação', 'simone.confortini@etec.sp.gov.br'),
 (71, 'Alessandro Ferreira da Costa', 'Especialista', '31', 'Gestão e Negócios - Ciências', ''),
-(72, 'Daiane Barbosa Giroto', 'Licenciado', '31 27', 'Geografia', ''),
+(72, 'Daiane Barbosa Giroto', 'Licenciado', '31 27 21', 'Geografia', ''),
 (73, 'Daniela Perez Guerrero', 'Mestre', '27', 'Farmácia - Agronomia', ''),
-(74, 'Júlio César Ferrari', 'Especialista', '24', 'Gestão e Negócios', ''),
-(75, 'Luiz Carlos Galvani', 'Especialista', '11', 'Gestão e Negócios', ''),
+(74, 'Júlio César Ferrari', 'Especialista', '24 21', 'Gestão e Negócios', ''),
+(75, 'Luiz Carlos Galvani', 'Especialista', '11 21', 'Gestão e Negócios', ''),
 (76, 'Sandra Nogueira dos Santos', 'Mestre', '11', 'Gestão e Negócios', '');
 COMMIT;
 
