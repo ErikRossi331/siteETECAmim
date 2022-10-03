@@ -137,7 +137,7 @@ $resultado_evento = mysqli_query($conn, $eventos);
 		</ol>
 		<div class="carousel-inner" role="listbox">
 			<div class="carousel-item active">
-				<div id="home" class="first-section" style="background-image:url('images/ETEC-Inst.jpg');">
+				<div id="home" class="first-section" style="background-image:url('images/ETEC-Inst.jpg'); background-attachment: fixed;">
 					<div class="dtab">
 						<div class="container">
 							<div class="row">
