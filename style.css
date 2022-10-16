@@ -116,7 +116,7 @@ a.page-link {
 
 .page-link {
 
-left: 29rem;
+left: 0rem;
 
 }
 
@@ -126,7 +126,7 @@ left: 29rem;
 
 .page-link {
 
-left: 24rem;
+left: 0rem;
 
 }
 
@@ -136,7 +136,7 @@ left: 24rem;
 
 .page-link {
 
-left: 17rem;
+left: 0rem;
 
 }
 }
@@ -145,7 +145,7 @@ left: 17rem;
 
 .page-link {
 
-left: 10rem;
+left: -3rem;
 
 }
 
@@ -160,7 +160,6 @@ left: 10rem;
 
 .page-link {
 
-left: 5rem !important;
 
 }
 }
@@ -178,7 +177,7 @@ left: 7rem;
 
 .page-link {
 
-left: 8rem;
+left: -4.5rem;
 
 }
 }

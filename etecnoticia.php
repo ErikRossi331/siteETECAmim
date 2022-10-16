@@ -240,7 +240,7 @@ while($rows_noticia = mysqli_fetch_assoc($resultado_noticia)){
                         	<li><a href="historia.php"> História </a></li>
                         	<li><a href="noticias.php"> Notícias </a></li>
                         	<li><a href="eventos.php"> Eventos </a></li>
-                        	<li><a href="contato.php"> Contato </a></li>
+                        	<li><a href="contatoetec.php"> Contato </a></li>
 
                     </div><!-- end clearfix -->
                 </div><!-- end col -->
