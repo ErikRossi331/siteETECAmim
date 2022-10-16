@@ -177,6 +177,7 @@ $row_cursostodos6 = mysqli_fetch_assoc($resultado_cursostodos6);
     min-height: 450px;
 box-shadow: 0 0 50px 0 rgba(0,0,0,.2);
         z-index: 10;
+        background-attachment: fixed;
 
 }
 
